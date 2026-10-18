@@ -1,3 +1,67 @@
 [gd_scene format=3 uid="uid://d2yhawbv1378g"]
 
 [node name="MainScreen" type="Node2D" unique_id=831907681]
+
+[node name="Title" type="Label" parent="." unique_id=1412658670]
+offset_left = 350.0
+offset_top = 30.0
+offset_right = 1152.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 30
+text = "Creative Prompt Generator"
+
+[node name="GeneratorDescription" type="RichTextLabel" parent="." unique_id=305767493]
+offset_left = 353.0
+offset_top = 84.0
+offset_right = 826.0
+offset_bottom = 153.0
+theme_override_font_sizes/normal_font_size = 13
+text = "Generate a scene with up to two characters (leave Character 2 blank if using only one character). Feel free to use these prompts as inspiration for art, writing, etc."
+fit_content = true
+scroll_active = false
+
+[node name="Character1" type="Label" parent="." unique_id=2002070165]
+offset_left = 353.0
+offset_top = 208.0
+offset_right = 447.0
+offset_bottom = 231.0
+text = "Character 1:"
+
+[node name="Character1Name" type="TextEdit" parent="." unique_id=1950889663]
+offset_left = 453.0
+offset_top = 211.0
+offset_right = 612.0
+offset_bottom = 229.0
+
+[node name="Character2" type="Label" parent="." unique_id=328267265]
+offset_left = 353.0
+offset_top = 245.0
+offset_right = 447.0
+offset_bottom = 268.0
+text = "Character 2:"
+
+[node name="Character2Name" type="TextEdit" parent="." unique_id=1912410071]
+offset_left = 453.0
+offset_top = 246.0
+offset_right = 612.0
+offset_bottom = 264.0
+
+[node name="AllowAdultPromptsLabel" type="Label" parent="." unique_id=1242384216]
+offset_left = 352.0
+offset_top = 164.0
+offset_right = 574.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 13
+text = "Include 18+ prompts/adult content"
+
+[node name="AllowAdultPromptsButton" type="CheckButton" parent="." unique_id=853732062]
+offset_left = 576.0
+offset_top = 163.0
+offset_right = 620.0
+offset_bottom = 187.0
+
+[node name="GeneratedPrompt" type="TextEdit" parent="." unique_id=743566130]
+offset_left = 354.0
+offset_top = 303.0
+offset_right = 835.0
+offset_bottom = 525.0
