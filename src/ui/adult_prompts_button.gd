@@ -16,7 +16,8 @@ extends CheckButton
 
 ## SCRIPT-WIDE VARIABLES
 ## ********************************************************************************
-# None
+## None
+## ********************************************************************************
 
 ## FUNCTIONS
 ## ********************************************************************************
@@ -27,11 +28,11 @@ extends CheckButton
 func _on_pressed() -> void:
 	# Button is on
 	if button_pressed == true:
-		PromptsEnabledGlobals.adult_prompts_enabled = true
+		ParametersGlobals.adult_prompts_enabled = true
 	else:
 		# User tries to turn button off; check if adult prompts button is pressed/checked on
 		# This prevents having both buttons turned off at the same time
-		if PromptsEnabledGlobals.gen_prompts_enabled == true:
-			PromptsEnabledGlobals.adult_prompts_enabled = false
+		if ParametersGlobals.gen_prompts_enabled == true:
+			ParametersGlobals.adult_prompts_enabled = false
 		else:
 			button_pressed = true

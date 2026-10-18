@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://d2yhawbv1378g"]
 
 [ext_resource type="Script" uid="uid://clgvtvtgw27qr" path="res://src/ui/gen_prompts_button.gd" id="1_2oig0"]
+[ext_resource type="Script" uid="uid://cr8kjrws7mi17" path="res://src/ui/character1_name.gd" id="1_ivt3c"]
+[ext_resource type="Script" uid="uid://cyv0wkeem0chl" path="res://src/ui/character2_name.gd" id="2_jokyv"]
 [ext_resource type="Script" uid="uid://dr6t8clpqvbpf" path="res://src/ui/adult_prompts_button.gd" id="2_ma4my"]
+[ext_resource type="Script" uid="uid://cqstjp8ecpq2b" path="res://src/ui/generated_prompt.gd" id="3_e3mlf"]
 
 [node name="MainScreen" type="Node2D" unique_id=831907681]
 
@@ -19,35 +22,39 @@ offset_top = 84.0
 offset_right = 826.0
 offset_bottom = 153.0
 theme_override_font_sizes/normal_font_size = 13
-text = "Generate a scene with up to two characters (leave Character 2 blank if using only one character). Check warnings before reading these prompts. Feel free to use these prompts as inspiration for art, writing, etc."
+text = "Generate a scene with up to two characters (leave one blank if using only one character). Check warnings before reading these prompts. Feel free to use these prompts as inspiration for art, writing, etc."
 fit_content = true
 scroll_active = false
 
 [node name="Character1" type="Label" parent="." unique_id=2002070165]
-offset_left = 433.0
+offset_left = 416.0
 offset_top = 208.0
-offset_right = 527.0
-offset_bottom = 231.0
+offset_right = 528.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 19
 text = "Character 1:"
 
-[node name="Character1Name" type="TextEdit" parent="." unique_id=1950889663]
+[node name="Character1Name" type="LineEdit" parent="." unique_id=900172510]
 offset_left = 533.0
-offset_top = 211.0
+offset_top = 207.0
 offset_right = 692.0
-offset_bottom = 229.0
+offset_bottom = 238.0
+script = ExtResource("1_ivt3c")
 
 [node name="Character2" type="Label" parent="." unique_id=328267265]
-offset_left = 433.0
+offset_left = 416.0
 offset_top = 245.0
-offset_right = 527.0
-offset_bottom = 268.0
+offset_right = 528.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 19
 text = "Character 2:"
 
-[node name="Character2Name" type="TextEdit" parent="." unique_id=1912410071]
+[node name="Character2Name" type="LineEdit" parent="." unique_id=503221731]
 offset_left = 533.0
-offset_top = 246.0
+offset_top = 243.0
 offset_right = 692.0
-offset_bottom = 264.0
+offset_bottom = 274.0
+script = ExtResource("2_jokyv")
 
 [node name="GenPrompts" type="Label" parent="." unique_id=1242384216]
 offset_left = 388.0
@@ -81,10 +88,11 @@ offset_bottom = 187.0
 script = ExtResource("2_ma4my")
 
 [node name="GenerateButton" type="Button" parent="." unique_id=1854445772]
-offset_left = 526.0
+offset_left = 496.0
 offset_top = 299.0
-offset_right = 638.0
-offset_bottom = 330.0
+offset_right = 662.0
+offset_bottom = 334.0
+theme_override_font_sizes/font_size = 19
 text = "Generate"
 
 [node name="GeneratedPrompt" type="TextEdit" parent="." unique_id=743566130]
@@ -92,7 +100,10 @@ offset_left = 354.0
 offset_top = 350.0
 offset_right = 835.0
 offset_bottom = 572.0
+scroll_smooth = true
+script = ExtResource("3_e3mlf")
 
 [connection signal="pressed" from="GenPromptsButton" to="GenPromptsButton" method="_on_pressed"]
 [connection signal="toggled" from="GenPromptsButton" to="GenPromptsButton" method="_on_toggled"]
 [connection signal="pressed" from="AdultPromptsButton" to="AdultPromptsButton" method="_on_pressed"]
+[connection signal="pressed" from="GenerateButton" to="GeneratedPrompt" method="_on_generate_button_pressed"]

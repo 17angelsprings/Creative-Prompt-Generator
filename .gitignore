@@ -1,3 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Ignore these files by Angel's request
+adult_solo_prompts.json
