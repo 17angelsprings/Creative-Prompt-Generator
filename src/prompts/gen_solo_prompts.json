@@ -1,4 +1,10 @@
+[
 {
-"1": " sees that their favorite brand of bread is half-off at the grocery store.",
-"2": " walks by a clothing store and sees a gorgeous outfit in their preferred style through the window."
+	"content warning": "None",
+	"prompt": " sees that their favorite brand of bread is half-off at the grocery store."
+},
+{
+	"content warning": "None",
+	"2": " walks by a clothing store and sees a gorgeous outfit in their preferred style through the window."
 }
+]

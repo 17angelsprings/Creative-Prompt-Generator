@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://d2yhawbv1378g"]
 
+[ext_resource type="Script" uid="uid://clgvtvtgw27qr" path="res://src/ui/gen_prompts_button.gd" id="1_2oig0"]
+[ext_resource type="Script" uid="uid://dr6t8clpqvbpf" path="res://src/ui/adult_prompts_button.gd" id="2_ma4my"]
+
 [node name="MainScreen" type="Node2D" unique_id=831907681]
 
 [node name="Title" type="Label" parent="." unique_id=1412658670]
@@ -60,6 +63,7 @@ offset_top = 163.0
 offset_right = 539.0
 offset_bottom = 187.0
 button_pressed = true
+script = ExtResource("1_2oig0")
 
 [node name="AdultPrompts" type="Label" parent="." unique_id=1353869968]
 offset_left = 550.0
@@ -74,6 +78,7 @@ offset_left = 669.0
 offset_top = 163.0
 offset_right = 713.0
 offset_bottom = 187.0
+script = ExtResource("2_ma4my")
 
 [node name="GenerateButton" type="Button" parent="." unique_id=1854445772]
 offset_left = 526.0
@@ -87,3 +92,7 @@ offset_left = 354.0
 offset_top = 350.0
 offset_right = 835.0
 offset_bottom = 572.0
+
+[connection signal="pressed" from="GenPromptsButton" to="GenPromptsButton" method="_on_pressed"]
+[connection signal="toggled" from="GenPromptsButton" to="GenPromptsButton" method="_on_toggled"]
+[connection signal="pressed" from="AdultPromptsButton" to="AdultPromptsButton" method="_on_pressed"]
