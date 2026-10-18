@@ -1,8 +1,4 @@
-[{
-	"number": 1,
-	"prompt": "sees that their favorite brand of bread is half-off at the grocery store."
-},
 {
-	"number": 2,
-	"prompt": "walks by a clothing store and sees a gorgeous outfit in their preferred style through the window."
-}]
+"1": " sees that their favorite brand of bread is half-off at the grocery store.",
+"2": " walks by a clothing store and sees a gorgeous outfit in their preferred style through the window."
+}
