@@ -54,13 +54,16 @@ func _on_generate_button_pressed() -> void:
 		generate_solo_prompt(gen_prompts_enabled, adult_prompts_enabled, character2_name)
 	# Two characters
 	else:
-		print(character1_name," ",character2_name)
+		generate_couple_prompt(gen_prompts_enabled, adult_prompts_enabled, character1_name, character2_name)
 
 ## Generates solo character prompt.
-## @params: None
+## @params: 
+## - gen_prompts_enabled: bool that indicates whether gen prompts are allowed
+## - adult_prompts_enabled: bool that indicates whether adult prompts are allowed
+## - character_name: string for character name
 ## @return: None
 func generate_solo_prompt(gen_prompts_enabled: bool, adult_prompts_enabled: bool, character_name: String) -> void:
-	text_format = "Warning: %s\n\n%s %s"
+	text_format = "Warning: %s\n\n%s%s"
 	# Choose between gen/adult
 	if choose_prompt_rating(gen_prompts_enabled, adult_prompts_enabled) == "gen":
 		file = FileAccess.open("res://src/prompts/gen_solo_prompts.json", FileAccess.READ)
@@ -78,14 +81,29 @@ func generate_solo_prompt(gen_prompts_enabled: bool, adult_prompts_enabled: bool
 		file.close()
 
 ## Generates couple character prompts.
-## @params: None
+## @params: 
+## - gen_prompts_enabled: bool that indicates whether gen prompts are allowed
+## - adult_prompts_enabled: bool that indicates whether adult prompts are allowed
+## - character1_name: string for first character name
+## - character2_name: string for second character name
 ## @return: None
 func generate_couple_prompt(gen_prompts_enabled: bool, adult_prompts_enabled: bool, character1_name: String, character2_name: String) -> void:
+	text_format = "Warning: %s\n\n%s %s %s%s"
 	# Choose between gen/adult
 	if choose_prompt_rating(gen_prompts_enabled, adult_prompts_enabled) == "gen":
-		pass
+		file = FileAccess.open("res://src/prompts/gen_couple_prompts.json", FileAccess.READ)
+		json = file.get_as_text()
+		data = JSON.parse_string(json)
+		prompt_num = randi() % data.size()
+		text = text_format % [data[prompt_num]["content warning"],character1_name,data[prompt_num]["prompt part 1"],character2_name,data[prompt_num]["prompt part 2"]]
+		file.close()
 	else:
-		pass
+		file = FileAccess.open("res://src/prompts/adult_couple_prompts.json", FileAccess.READ)
+		json = file.get_as_text()
+		data = JSON.parse_string(json)
+		prompt_num = randi() % data.size()
+		text = text_format % [data[prompt_num]["content warning"],character1_name,data[prompt_num]["prompt part 1"],character2_name,data[prompt_num]["prompt part 2"]]
+		file.close()
 	
 ## Logic that chooses between general and adult prompts.
 ## @params: 
