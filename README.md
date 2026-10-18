@@ -1,2 +1,4 @@
-# Angels-Godot-Lab
-Personal repository to try out concepts in Godot like short games or demos
+# Creative Prompt Generator
+
+Lets users input a character name or two and offers users different prompts with those characters to serve as inspiration.
+
