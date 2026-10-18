@@ -22,6 +22,12 @@ extends CheckButton
 ## FUNCTIONS
 ## ********************************************************************************
 
+## Called when the node enters the scene tree for the first time.
+## @params: None
+## @return: None
+func _ready() -> void:
+	pass
+	
 ## Button is pressed/checked on or off
 ## @params: None
 ## @return: None

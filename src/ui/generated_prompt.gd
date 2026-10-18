@@ -1,6 +1,6 @@
 ## GENERATED PROMPT .GD
 ## ********************************************************************************
-## 
+## Uses character names and prompt rating parameters and generates a prompt from one of the prompt lists
 ## ********************************************************************************
 
 ## ASSOCIATED SCENES
@@ -10,7 +10,7 @@
 
 ## EXTENSIONS
 ## ********************************************************************************
-extends TextEdit
+extends RichTextLabel
 ## ********************************************************************************
 
 ## SCRIPT-WIDE VARIABLES

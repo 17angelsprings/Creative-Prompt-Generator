@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clgvtvtgw27qr" path="res://src/ui/gen_prompts_button.gd" id="1_2oig0"]
 [ext_resource type="Script" uid="uid://cr8kjrws7mi17" path="res://src/ui/character1_name.gd" id="1_ivt3c"]
+[ext_resource type="Script" uid="uid://dx0dovjdlevbr" path="res://src/ui/title.gd" id="1_vy6w2"]
 [ext_resource type="Script" uid="uid://cyv0wkeem0chl" path="res://src/ui/character2_name.gd" id="2_jokyv"]
 [ext_resource type="Script" uid="uid://dr6t8clpqvbpf" path="res://src/ui/adult_prompts_button.gd" id="2_ma4my"]
 [ext_resource type="Script" uid="uid://cqstjp8ecpq2b" path="res://src/ui/generated_prompt.gd" id="3_e3mlf"]
@@ -12,57 +13,35 @@
 offset_left = 350.0
 offset_top = 30.0
 offset_right = 1152.0
-offset_bottom = 69.0
+offset_bottom = 72.0
+focus_next = NodePath("../GeneratorDescription")
+focus_mode = 2
+accessibility_name = "Creative Prompt Generator"
 theme_override_font_sizes/font_size = 30
 text = "Creative Prompt Generator"
+script = ExtResource("1_vy6w2")
 
 [node name="GeneratorDescription" type="RichTextLabel" parent="." unique_id=305767493]
 offset_left = 353.0
 offset_top = 84.0
 offset_right = 826.0
 offset_bottom = 153.0
+focus_next = NodePath("../GenPrompts")
+focus_previous = NodePath("../Title")
+focus_mode = 2
 theme_override_font_sizes/normal_font_size = 13
 text = "Generate a scene with up to two characters (leave one blank if using only one character). Check warnings before reading these prompts. Feel free to use these prompts as inspiration for art, writing, etc."
 fit_content = true
 scroll_active = false
-
-[node name="Character1" type="Label" parent="." unique_id=2002070165]
-offset_left = 416.0
-offset_top = 208.0
-offset_right = 528.0
-offset_bottom = 235.0
-theme_override_font_sizes/font_size = 19
-text = "Character 1:"
-
-[node name="Character1Name" type="LineEdit" parent="." unique_id=900172510]
-offset_left = 533.0
-offset_top = 207.0
-offset_right = 692.0
-offset_bottom = 238.0
-theme_override_font_sizes/font_size = 14
-script = ExtResource("1_ivt3c")
-
-[node name="Character2" type="Label" parent="." unique_id=328267265]
-offset_left = 416.0
-offset_top = 245.0
-offset_right = 528.0
-offset_bottom = 272.0
-theme_override_font_sizes/font_size = 19
-text = "Character 2:"
-
-[node name="Character2Name" type="LineEdit" parent="." unique_id=503221731]
-offset_left = 533.0
-offset_top = 243.0
-offset_right = 692.0
-offset_bottom = 274.0
-theme_override_font_sizes/font_size = 14
-script = ExtResource("2_jokyv")
 
 [node name="GenPrompts" type="Label" parent="." unique_id=1242384216]
 offset_left = 388.0
 offset_top = 164.0
 offset_right = 508.0
 offset_bottom = 187.0
+focus_next = NodePath("../GenPromptsButton")
+focus_previous = NodePath("../GeneratorDescription")
+focus_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "General prompts"
 
@@ -71,6 +50,8 @@ offset_left = 495.0
 offset_top = 163.0
 offset_right = 539.0
 offset_bottom = 187.0
+focus_next = NodePath("../AdultPrompts")
+focus_previous = NodePath("../GenPrompts")
 button_pressed = true
 script = ExtResource("1_2oig0")
 
@@ -79,6 +60,9 @@ offset_left = 550.0
 offset_top = 164.0
 offset_right = 687.0
 offset_bottom = 187.0
+focus_next = NodePath("../AdultPromptsButton")
+focus_previous = NodePath("../GenPromptsButton")
+focus_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "Adult/18+ prompts"
 
@@ -87,23 +71,70 @@ offset_left = 669.0
 offset_top = 163.0
 offset_right = 713.0
 offset_bottom = 187.0
+focus_next = NodePath("../Character1")
+focus_previous = NodePath("../AdultPrompts")
 script = ExtResource("2_ma4my")
+
+[node name="Character1" type="Label" parent="." unique_id=2002070165]
+offset_left = 416.0
+offset_top = 208.0
+offset_right = 528.0
+offset_bottom = 235.0
+focus_next = NodePath("../Character1Name")
+focus_previous = NodePath("../AdultPromptsButton")
+focus_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Character 1:"
+
+[node name="Character1Name" type="LineEdit" parent="." unique_id=900172510]
+offset_left = 533.0
+offset_top = 207.0
+offset_right = 692.0
+offset_bottom = 238.0
+focus_next = NodePath("../Character2")
+focus_previous = NodePath("../Character1")
+theme_override_font_sizes/font_size = 14
+script = ExtResource("1_ivt3c")
+
+[node name="Character2" type="Label" parent="." unique_id=328267265]
+offset_left = 416.0
+offset_top = 245.0
+offset_right = 528.0
+offset_bottom = 272.0
+focus_next = NodePath("../Character2Name")
+focus_previous = NodePath("../Character1Name")
+focus_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "Character 2:"
+
+[node name="Character2Name" type="LineEdit" parent="." unique_id=503221731]
+offset_left = 533.0
+offset_top = 243.0
+offset_right = 692.0
+offset_bottom = 274.0
+focus_next = NodePath("../GenerateButton")
+focus_previous = NodePath("../Character2")
+theme_override_font_sizes/font_size = 14
+script = ExtResource("2_jokyv")
 
 [node name="GenerateButton" type="Button" parent="." unique_id=1854445772]
 offset_left = 496.0
 offset_top = 299.0
 offset_right = 662.0
 offset_bottom = 334.0
+focus_next = NodePath("../GeneratedPrompt")
+focus_previous = NodePath("../Character2Name")
 theme_override_font_sizes/font_size = 19
 text = "Generate"
 
-[node name="GeneratedPrompt" type="TextEdit" parent="." unique_id=743566130]
+[node name="GeneratedPrompt" type="RichTextLabel" parent="." unique_id=1069160220]
 offset_left = 354.0
 offset_top = 350.0
 offset_right = 835.0
 offset_bottom = 572.0
-wrap_mode = 1
-scroll_smooth = true
+focus_next = NodePath("../Title")
+focus_previous = NodePath("../GenerateButton")
+focus_mode = 2
 script = ExtResource("3_e3mlf")
 
 [connection signal="pressed" from="GenPromptsButton" to="GenPromptsButton" method="_on_pressed"]
