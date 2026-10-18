@@ -13,6 +13,7 @@ config_version=5
 config/name="Creative Prompt Generator"
 run/main_scene="uid://d2yhawbv1378g"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]

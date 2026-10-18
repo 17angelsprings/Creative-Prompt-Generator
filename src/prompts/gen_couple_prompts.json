@@ -28,5 +28,10 @@
 	"content warning": "None",
 	"prompt part 1": "and",
 	"prompt part 2": " are playing with the animals at an animal shelter. They're considering adopting one for themselves."
+},
+{
+	"content warning": "None",
+	"prompt part 1": "has a strange or unusual habit that",
+	"prompt part 2": " is trying to wrap their head around."
 }
 ]
