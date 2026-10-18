@@ -8,5 +8,25 @@
 	"content warning": "None",
 	"prompt part 1": "and",
 	"prompt part 2": " are playing video games together."
+},
+{
+	"content warning": "None",
+	"prompt part 1": "is taking care of",
+	"prompt part 2": ", who is not feeling well."
+},
+{
+	"content warning": "None",
+	"prompt part 1": "and",
+	"prompt part 2": " are listening to music together."
+},
+{
+	"content warning": "None",
+	"prompt part 1": "and",
+	"prompt part 2": " team up to do a science experiment."
+},
+{
+	"content warning": "None",
+	"prompt part 1": "and",
+	"prompt part 2": " are playing with the animals at an animal shelter. They're considering adopting one for themselves."
 }
 ]

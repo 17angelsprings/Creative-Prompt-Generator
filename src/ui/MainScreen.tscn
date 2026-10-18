@@ -39,6 +39,7 @@ offset_left = 533.0
 offset_top = 207.0
 offset_right = 692.0
 offset_bottom = 238.0
+theme_override_font_sizes/font_size = 14
 script = ExtResource("1_ivt3c")
 
 [node name="Character2" type="Label" parent="." unique_id=328267265]
@@ -54,6 +55,7 @@ offset_left = 533.0
 offset_top = 243.0
 offset_right = 692.0
 offset_bottom = 274.0
+theme_override_font_sizes/font_size = 14
 script = ExtResource("2_jokyv")
 
 [node name="GenPrompts" type="Label" parent="." unique_id=1242384216]
